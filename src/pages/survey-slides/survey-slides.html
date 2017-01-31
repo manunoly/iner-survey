@@ -1,0 +1,59 @@
+<!--
+  Generated template for the SurveySlides page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-slides (ionSlideDidChange)="slideChanged()">
+  <ion-slide>
+    <h1>Slide 1</h1>
+    <ion-list>
+      <ion-item>
+        <ion-label color="primary">Inline Label</ion-label>
+        <ion-input placeholder="Text Input" [(ngModel)]="input1"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" fixed>Fixed Label</ion-label>
+        <ion-input type="tel" placeholder="Tel Input" [(ngModel)]="input2"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="number" placeholder="Number Input with no label"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked>Stacked Label</ion-label>
+        <ion-input type="email" placeholder="Email Input" [(ngModel)]="input3"></ion-input>
+      </ion-item>
+
+    </ion-list>
+  </ion-slide>
+  <ion-slide>
+    <h1>Slide 2</h1>
+  </ion-slide>
+  <ion-slide>
+    <h1>Slide 3</h1>
+  </ion-slide>
+</ion-slides>
+
+  {{input2}}
+
+<ion-footer no-border>
+  <ion-toolbar>
+    <ion-buttons>
+      <button ion-button icon-left>
+          <ion-icon name="arrow-round-back"></ion-icon>
+          Anterior
+        </button>
+    </ion-buttons>
+
+    <ion-buttons end>
+      <button ion-button icon-right>
+          Siguiente
+          <ion-icon name="arrow-round-forward"></ion-icon>
+        </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
