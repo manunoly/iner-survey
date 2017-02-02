@@ -6,28 +6,214 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>Bienvenidos a la Encuesta</ion-title>
+    <ion-title>Encuesta Iner 2017</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <div *ngIf="!started">
-    <h3>Listos Para comenzar</h3>
+<ion-content text-center>
+  <ion-slides>
 
-    <p>
-      Iner 2017
-    </p>
-    <p></p>
-    <p>
-      <button ion-button block color="primary" icon-left (click)="startSurvey()">
-    <ion-icon name="happy"></ion-icon>
-    Iniciar Encuesta
-  </button>
-    </p>
-  </div>
+    <ion-slide text-center>
+      <ion-row>
+        <ion-col width-100>Listos para Comenzar</ion-col>
+      </ion-row>
+      <ion-icon name="happy"></ion-icon>
+    </ion-slide>
 
-  <div *ngIf="started">
-    <page-survey-slides></page-survey-slides>
-  </div>
-  {{input2}}
+    <ion-slide>
+      <ion-list radio-group [(ngModel)]="tipoVivienda">
+        <ion-list-header>
+          Tipo de vivienda
+        </ion-list-header>
+
+        <ion-item>
+          <ion-label>Casa aislada</ion-label>
+          <ion-radio value="casaAislada"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Casa pareada</ion-label>
+          <ion-radio value="casaPareada"></ion-radio>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label>Departamento en casa o edificio</ion-label>
+          <ion-radio value="dptoCasaEdificio"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Cuarto(s)</ion-label>
+          <ion-input type="number"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Número total de pisos</ion-label>
+          <ion-input type="number"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Color predominante de la vivienda es</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+
+      </ion-list>
+    </ion-slide>
+
+    <ion-slide>
+
+      <ion-list radio-group [(ngModel)]="techoMaterial">
+        <ion-list-header>
+          TECHO: Material predominante
+        </ion-list-header>
+
+        <ion-item>
+          <ion-label>Losa de cemento</ion-label>
+          <ion-radio value="losaCemento"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Ladrillo</ion-label>
+          <ion-radio value="ladrillo"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Asbesto (Eternit/Eurolit)</ion-label>
+          <ion-radio value="asbesto"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Metal</ion-label>
+          <ion-radio value="metal"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Teja</ion-label>
+          <ion-radio value="teja"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Madera</ion-label>
+          <ion-radio value="madera"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Material vegetal</ion-label>
+          <ion-radio value="materialVegetal"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Plástico</ion-label>
+          <ion-radio value="plastico"></ion-radio>
+        </ion-item>
+
+      </ion-list>
+    </ion-slide>
+
+    <ion-slide>
+
+      <ion-list radio-group [(ngModel)]="paredesExt">
+
+        <ion-list-header>
+          PAREDES: Material predominante
+        </ion-list-header>
+
+        <ion-item>
+          <ion-label floating>Ancho en metros de la pared</ion-label>
+          <ion-input type="number" [(ngModel)]="anchoParedeExt"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Hormigón</ion-label>
+          <ion-radio value="hormigon"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Bloque</ion-label>
+          <ion-radio value="bloque"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Ladrillo</ion-label>
+          <ion-radio value="ladrillo"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Adobe</ion-label>
+          <ion-radio value="adobe"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Tapia</ion-label>
+          <ion-radio value="tapia"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Madera</ion-label>
+          <ion-radio value="madera"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Bahareque (caña y carrizo revestido)</ion-label>
+          <ion-radio value="bahareque"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Caña</ion-label>
+          <ion-radio value="canna"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Prefabricados</ion-label>
+          <ion-radio value="prefabricados"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Metal</ion-label>
+          <ion-radio value="metal"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Plástico</ion-label>
+          <ion-radio value="plastico"></ion-radio>
+        </ion-item>
+
+      </ion-list>
+    </ion-slide>
+
+    <ion-slide text-center>
+      <ion-row>
+        <ion-col width-100>Gracias. Terminamos!!</ion-col>
+      </ion-row>
+        <ion-icon name="happy"></ion-icon>
+      <button ion-button icon-left color="secondary" block>
+         Guardar y Terminar 
+        <ion-icon name="thumbs-up"> </ion-icon>         
+      </button>
+    </ion-slide>
+
+  </ion-slides>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons right end>
+      <button ion-button icon-right (click)="nextSlide()">
+        Siguiente
+        <ion-icon name="arrow-round-forward"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-buttons text-center center>
+      <button ion-button small>
+        {{slideNumber}} / {{slideLength}}
+        </button>
+    </ion-buttons>
+
+    <ion-buttons left>
+      <button ion-button icon-left (click)="previousSlide()">
+          <ion-icon name="arrow-round-back"></ion-icon>
+          Anterior
+        </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

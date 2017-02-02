@@ -13,23 +13,51 @@ import { Slides, NavController, NavParams } from 'ionic-angular';
 })
 export class SurveySlidesPage {
   @ViewChild(Slides) slides: Slides;
+  slideNumber: Number;
+  slideLength: Number;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) { }
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.slideNumber = 1; 
+   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SurveySlidesPage');
+    
   }
   ngAfterViewInit() {
-    this.slides.autoplay = true;
+    this.slides.lockSwipes(true);
+
   }
-  goToSlide() {
-    this.slides.slideTo(2, 50);
+  goToSlide(slide: number) {
+    this.slides.slideTo(slide, 500);
   }
   slideChanged() {
-    this.slides.slidePrev(0, false)
     let currentIndex = this.slides.getActiveIndex();
     console.log("Current index is", currentIndex);
     console.log(this.slides.length());
+  }
+  nextSlide(){
+    this.slideLength = this.slides.length();           
+    this.slides.lockSwipes(false);      
+    this.slides.slideNext(500,false);
+    this.slideNumber = this.slides.getActiveIndex() + 1;
+    this.slides.lockSwipes(true);    
+    // let currentIndex = this.slides.getActiveIndex();
+    // console.log("Current index is", currentIndex);    
+    // this.goToSlide(currentIndex + 1)
+  }
+  previousSlide(){
+    if (this.slides.isBeginning() == false){
+        this.slides.lockSwipes(false);    
+        this.slideNumber = this.slides.getActiveIndex()
+        this.slides.slidePrev(500,false);
+        this.slides.lockSwipes(true);
+    }
+    
+    
+    // let currentIndex = this.slides.getActiveIndex();
+    // console.log("Current index is", currentIndex);    
+    // this.goToSlide(currentIndex - 1)
   }
 
 }
