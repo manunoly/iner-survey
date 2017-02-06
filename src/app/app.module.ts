@@ -8,6 +8,8 @@ import { HomePage } from '../pages/home/home';
 import { SurveyPage } from '../pages/survey/survey';
 import { AboutPage } from '../pages/about/about';
 import { SurveySlidesPage } from '../pages/survey-slides/survey-slides';
+import { GeolocationPagePage } from '../pages/geolocation-page/geolocation-page';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { SurveySlidesPage } from '../pages/survey-slides/survey-slides';
     HomePage,
     SurveyPage,
     AboutPage,
-    SurveySlidesPage
+    SurveySlidesPage,
+    GeolocationPagePage
 
   ],
   imports: [
@@ -33,7 +36,8 @@ import { SurveySlidesPage } from '../pages/survey-slides/survey-slides';
     HomePage,
     SurveyPage,
     AboutPage,
-    SurveySlidesPage
+    SurveySlidesPage,
+    GeolocationPagePage
 
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]

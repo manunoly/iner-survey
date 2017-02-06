@@ -9,6 +9,7 @@ import { ListPage } from '../pages/list/list';
 import { HomePage } from '../pages/home/home';
 import { AboutPage } from '../pages/about/about';
 import { SurveyPage } from '../pages/survey/survey';
+import { GeolocationPagePage } from '../pages/geolocation-page/geolocation-page';
 
 
 @Component({
@@ -33,7 +34,8 @@ export class MyApp {
       // { title: 'ionic', component: HelloIonicPage },
       // { title: 'My First List', component: ListPage },
       { title: 'Encuesta', component: SurveyPage },
-      { title: 'Sobre Nosotros', component: AboutPage }      
+      { title: 'Sobre Nosotros', component: AboutPage },      
+      { title: 'geolocation', component: GeolocationPagePage }
     ];
   }
 

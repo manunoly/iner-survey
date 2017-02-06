@@ -1,0 +1,12 @@
+page-geolocation-page {
+//This component is linked with map in temples page
+//Map component content starts here
+.ios, .md
+{
+temple-page{
+          .scroll-content {height: 100%}
+          #map {width: 100%;height: 100%;}
+         }
+}
+//Map component content ends here
+}
